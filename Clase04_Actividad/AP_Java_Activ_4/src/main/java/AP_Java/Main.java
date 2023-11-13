@@ -10,38 +10,44 @@ public class Main {
         System.out.println("Fecha y hora actual: " + ZonedDateTime.now());
         // Testeo 1
 
-        ComponenteTendenciasMusicales calcularTendencia = new ComponenteTendenciasMusicales
+        ComponenteTendenciasMusicales cancionConTendencia = new ComponenteTendenciasMusicales
                 (cancion, 100, 2,  900, ZonedDateTime.parse("2023-11-13T08:00:00Z"));
 
-        calcularTendencia.mostrarIconoYLeyenda();
+        cancionConTendencia.calcularTendencia();
 
         // Testeo 2
 
-        ComponenteTendenciasMusicales calcularTendencia2 = new ComponenteTendenciasMusicales
-                (cancion, 1100, 50,  1500, ZonedDateTime.parse("2023-11-13T08:30:00Z"));
+        cancionConTendencia.setCantLikes(1100);
+        cancionConTendencia.setCantDislikes(50);
+        cancionConTendencia.setCantReproducciones(1500);
+        cancionConTendencia.setUltimaReproduccion(ZonedDateTime.parse("2023-11-13T08:30:00Z"));
 
-        calcularTendencia2.mostrarIconoYLeyenda();
+        cancionConTendencia.calcularTendencia();
 
-        // Testeo 3
+        //Testeo 3
 
-        ComponenteTendenciasMusicales calcularTendencia3 = new ComponenteTendenciasMusicales
-                (cancion, 5200, 5000,  7500, ZonedDateTime.parse("2023-11-13T08:55:00Z"));
+        cancionConTendencia.setCantLikes(5200);
+        cancionConTendencia.setCantDislikes(5000);
+        cancionConTendencia.setCantReproducciones(7500);
+        cancionConTendencia.setUltimaReproduccion(ZonedDateTime.parse("2023-11-13T08:55:00Z"));
 
-        calcularTendencia3.mostrarIconoYLeyenda();
+        cancionConTendencia.calcularTendencia();
 
-        // Testeo 4
+        //Testeo 4
+        cancionConTendencia.setCantLikes(20001);
+        cancionConTendencia.setCantDislikes(7500);
+        cancionConTendencia.setCantReproducciones(50001);
+        cancionConTendencia.setUltimaReproduccion(ZonedDateTime.parse("2023-11-13T09:10:00Z"));
 
-        ComponenteTendenciasMusicales calcularTendencia4 = new ComponenteTendenciasMusicales
-                (cancion, 20001, 7500,  50001, ZonedDateTime.parse("2023-11-13T09:10:00Z"));
+        cancionConTendencia.calcularTendencia();
 
-        calcularTendencia4.mostrarIconoYLeyenda();
+        //Testeo 5
+        cancionConTendencia.setCantLikes(50000);
+        cancionConTendencia.setCantDislikes(9000);
+        cancionConTendencia.setCantReproducciones(125000);
+        cancionConTendencia.setUltimaReproduccion(ZonedDateTime.parse("2023-11-11T09:10:00Z"));
 
-        // Testeo 5
-
-        ComponenteTendenciasMusicales calcularTendencia5 = new ComponenteTendenciasMusicales
-                (cancion, 50000, 9000,  125000, ZonedDateTime.parse("2023-11-11T09:10:00Z"));
-
-        calcularTendencia5.mostrarIconoYLeyenda();
+        cancionConTendencia.calcularTendencia();
 
 
     }

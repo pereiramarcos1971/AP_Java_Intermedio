@@ -2,9 +2,6 @@ package AP_Java;
 
 public interface Tendencia{
 
-    void mostrarIcono();
-
-    void mostrarLeyenda(Cancion cancion);
-
+    void calcularTendencia(Cancion cancion);
 
 }
